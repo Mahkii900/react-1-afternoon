@@ -3,7 +3,19 @@ import React, {Component} from 'react'
 class FilterObject extends Component {
     constructor() {
         this.state = {
-            unFilteredArray: [{name: 'Bob'}, {name: 'Joe'}, {name: 'Freddy-boy'}],
+            unFilteredArray: [{
+                name: 'bob',
+                job: 'plumber',
+                money: 'none'
+            }, {
+                name: 'joe',
+                hobbies: 'running',
+                likesSoccer: false
+            }, {
+                age: 22,
+                hobbies: 'golf',
+                money: 'lots'
+            }],
             userInput: '',
             filteredArray: []
         }
@@ -14,7 +26,9 @@ class FilterObject extends Component {
     }
 
     filterArray(input) {
-        
+        let arr = this.unFilteredArray
+        let filtered = arr.filter((ele) => {Object.keys(ele).includes(input)})
+        this.setState({filteredArray: filtered})
     }
     
     render() {
