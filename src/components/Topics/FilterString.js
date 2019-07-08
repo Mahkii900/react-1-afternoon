@@ -5,7 +5,7 @@ class FilterString extends Component {
         super()
 
         this.state = {
-            unFilteredArray: [], //Add Strings
+            unFilteredArray: ['abra', 'kadabra', 'alakazam', 'deoxyribonucleic acid', 'inconceivable'], //Add Strings
             userInput: '',
             filteredArray: []
         }
